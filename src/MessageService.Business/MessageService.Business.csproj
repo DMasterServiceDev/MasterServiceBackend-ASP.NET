@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\MessageService.Models.Dto\MessageService.Models.Dto.csproj" />
+		<ProjectReference Include="..\MessageService.Data\MessageService.Data.csproj" />
+		<ProjectReference Include="..\MessageService.Mappers\MessageService.Mappers.csproj" />
+	</ItemGroup>	
+	
+</Project>
