@@ -13,7 +13,6 @@ public class MessageRepository : IMessageRepository
     _context = context;
   }
 
-
   public async Task<long?> CreateAsync(DbMessage dbMessage)
   {
     if (dbMessage is null)
@@ -25,9 +24,14 @@ public class MessageRepository : IMessageRepository
     _context.SaveChanges();
     return dbMessage.Id;
   }
-  
+
   public async Task<DbMessage?> GetAsync(long id)
   {
-    return _context.Messages.FirstOrDefault(message => message.Id == id);;
+    return _context.Messages.FirstOrDefault(message => message.Id == id); ;
+  }
+
+  public async Task<List<DbMessage>> GetByIdsAsync(long creatorId, long receiverId)
+  {
+    return _context.Messages.Where(message => message.CreatedBy == creatorId && message.ReceiverId == receiverId).ToList();
   }
 }

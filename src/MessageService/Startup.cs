@@ -54,6 +54,7 @@ public class Startup
     services.AddTransient<IDbMessageMapper, DbMessageMapper>();
     services.AddTransient<IMessageInfoMapper, MessageInfoMapper>();
     services.AddTransient<IMessageRepository, MessageRepository>();
+    services.AddTransient<IGetMessageByCreatotAndReceiver, GetMessageByCreatotAndReceiver>();
 
     services.AddEndpointsApiExplorer();
 

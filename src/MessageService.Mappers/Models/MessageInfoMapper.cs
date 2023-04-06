@@ -25,4 +25,16 @@ public class MessageInfoMapper : IMessageInfoMapper
             };
 
   }
+
+  public List<MessageInfo> MapList(List<DbMessage> dbMessages)
+  {
+    List<MessageInfo> mapped = new();
+
+     foreach(var dbMessage in dbMessages)
+    {
+      mapped.Add(Map(dbMessage));
+    }
+
+     return mapped;
+  }
 }
