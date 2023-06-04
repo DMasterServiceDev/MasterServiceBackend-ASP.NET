@@ -10,7 +10,7 @@ namespace MessageService.Controllers;
 [ApiController]
 public class MessageController : ControllerBase
 {
-  [HttpPost("Сreate")]
+  [HttpPost("Create")]
   public async Task<OperationResultResponse<long?>> CreateAsync(
     [FromServices] ICreateMessageCommand command,
     [FromBody] CreateMessageRequest request)
